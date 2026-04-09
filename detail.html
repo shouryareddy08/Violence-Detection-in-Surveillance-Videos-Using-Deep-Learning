@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Detected Object Details</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #232526, #414345);
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 60px;
+}
+h1 {
+  color: #00ffc8;
+  margin-top: 20px;
+}
+img {
+  width: 70%;
+  border-radius: 15px;
+  border: 3px solid #00ffc8;
+  margin-top: 25px;
+}
+.info {
+  text-align: left;
+  display: inline-block;
+  margin-top: 25px;
+  background: rgba(255,255,255,0.1);
+  padding: 15px 25px;
+  border-radius: 10px;
+  line-height: 1.8;
+}
+button {
+  margin-top: 20px;
+  background: #00ffc8;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+button:hover {
+  background: #00bfa5;
+  color: #fff;
+}
+</style>
+</head>
+<body>
+
+<h1>📷 Detected Object Details</h1>
+<img src="{{ image_url }}" alt="Detected Object">
+
+<div class="info">
+  <p><b>Camera ID:</b> KRD169653473C4</p>
+  <p><b>Terminal:</b> D56</p>
+  <p><b>Location:</b> Departures Hall 8</p>
+  <p><b>Authority in Charge:</b> K Ramya</p>
+</div>
+
+<button onclick="window.location='/'">⬅ Back to Home</button>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Security Surveillance</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  header {
+    text-align: center;
+    padding: 25px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #6096bc;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    flex-wrap: wrap;
+  }
+
+  .video-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    padding: 15px;
+    width: 450px;
+    text-align: center;
+  }
+
+  .video-card img {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #588fb0;
+  }
+
+  form {
+    margin-top: 15px;
+  }
+
+  input[type=email] {
+    padding: 10px;
+    width: 65%;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    background: #43aca3;
+    color: #000;
+    font-weight: 600;
+    border-radius: 8px;
+    margin: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #00bfa5;
+    color: #fff;
+  }
+
+  section {
+    text-align: center;
+    padding: 20px;
+  }
+
+  section h2 {
+    color: #43aca3;
+    margin-bottom: 15px;
+  }
+
+  .recent-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 50px;
+  }
+
+  .recent-container a img {
+    width: 220px;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+
+  .recent-container a img:hover {
+    transform: scale(1.05);
+    border-color: #376b87;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #ddd;
+    background: rgba(255,255,255,0.05);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🚨 Real-Time Smart Security Surveillance</h1>
+  <p> Automatic Detection & Alerts</p>
+</header>
+
+<div class="container">
+  <div class="video-card">
+    <img src="{{ url_for('video_feed') }}" alt="Live Video Feed">
+    <form action="/submit" method="POST">
+      <input type="email" name="email" placeholder="Enter email for alerts" required>
+      <button type="submit">Register Email</button>
+    </form>
+    <button onclick="window.location='/manual-alert'">🚨 Trigger Manual Alert</button>
+  </div>
+</div>
+
+<section id="recent">
+  <h2>🖼️ Recently Detected Objects</h2>
+  <div class="recent-container">
+    {% for img in images %}
+      <a href="{{ url_for('detail', filename=img.split('/')[-1]) }}">
+        <img src="{{ img }}" alt="Detected Image">
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+
+</body>
+</html>
