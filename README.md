@@ -2,6 +2,11 @@
 
 A real-time intelligent surveillance system that detects and tracks objects (like backpacks, bottles, and suitcases), identifies abandoned objects, and sends instant alerts via email with snapshots and sound notifications — enhancing safety in public and private spaces.
 
+Submitted by
+2410030322 V Manish Reddy
+2410030396 K Manish Reddy
+2410030367 S Shourya Reddy
+2410030184 G Harish
 ---
 
 
