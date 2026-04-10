@@ -7,3 +7,4 @@ itsdangerous==2.1.2
 click==8.1.7
 colorama==0.4.6
 requests==2.31.0
+gunicorn manage:app
